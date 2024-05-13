@@ -34,4 +34,26 @@ public class SanPhamRepository {
             }
         }
     }
+
+    public SanPham findById(int id)
+    {
+        for (int i = 0; i < this.ds.size(); i++) {
+            SanPham sp = this.ds.get(i);
+            if (sp.getId() == id) {
+                return sp;
+            }
+        }
+
+        return null;
+    }
+
+    public void update(SanPham newValue)
+    {
+        for (int i = 0; i < this.ds.size(); i++) {
+            SanPham oldValue = this.ds.get(i);
+            if (oldValue.getId() == newValue.getId()) {
+                this.ds.set(i, newValue);
+            }
+        }
+    }
 }

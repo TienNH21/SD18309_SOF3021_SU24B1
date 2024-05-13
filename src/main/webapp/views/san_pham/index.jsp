@@ -31,7 +31,7 @@
         <td>${ sp.ten }</td>
         <td>${ sp.trangThai == 1 ? "Dang hoat dong" : "Ngung hoat dong" }</td>
         <td>
-            <a href="#">Update</a>
+            <a href="/san-pham/edit/${ sp.id }">Update</a>
         </td>
         <td>
             <a href="/san-pham/delete/${ sp.id }">
