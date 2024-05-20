@@ -16,11 +16,17 @@
 <form method="post" action="/san-pham/store">
     <div>
         <label>Mã</label>
-        <input type="text" name="ma" />
+        <input type="text" name="ma" value="${ data.ma }" />
+        <c:if test="${ not empty errors['ma'] }">
+            <small style="color: red">${ errors['ma'] }</small>
+        </c:if>
     </div>
     <div>
         <label>Tên</label>
-        <input type="text" name="ten" />
+        <input type="text" name="ten" value="${ data.ten }" />
+        <c:if test="${ not empty errors['ten'] }">
+            <small style="color: red">${ errors['ten'] }</small>
+        </c:if>
     </div>
     <div>
         <label>Trạng thái</label>
@@ -28,6 +34,9 @@
             <option value="1">Đang hoạt động</option>
             <option value="0">Ngừng hoạt động</option>
         </select>
+        <c:if test="${ not empty errors['trangThai'] }">
+            <small style="color: red">${ errors['trangThai'] }</small>
+        </c:if>
     </div>
     <div>
         <button>Lưu</button>
