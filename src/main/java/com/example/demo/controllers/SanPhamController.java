@@ -4,6 +4,8 @@ import com.example.demo.entities.SanPham;
 import com.example.demo.repositories.assignment2.SanPhamRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,9 +23,16 @@ public class SanPhamController {
     private SanPhamRepository spRepo;
 
     @GetMapping("index")
-    public String index(Model model)
-    {
-        List<SanPham> ds = this.spRepo.findAll();
+    public String index(
+        @RequestParam(name = "page", defaultValue = "1") int pageNo,
+        @RequestParam(name = "limit", defaultValue = "10") int pageSize,
+        @RequestParam(name = "keyword", defaultValue = "") String keyword,
+        Model model
+    ) {
+        PageRequest p = PageRequest.of(pageNo, pageSize);
+//        Page<SanPham> ds = this.spRepo.findAll(p);
+        keyword = "%" + keyword + "%";
+        List<SanPham> ds = this.spRepo.findByTenLike(keyword);
         model.addAttribute("data", ds);
         return "san_pham/index";
     }

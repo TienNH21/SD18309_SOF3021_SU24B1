@@ -10,11 +10,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-<table>
-    <thead>
+<table class="table table-stripped">
+    <thead class="table-dark">
     <tr>
         <th>ID</th>
         <th>Mã</th>
@@ -42,6 +43,27 @@
     </c:forEach>
     </tbody>
 </table>
+
+<%--<nav aria-label="Page navigation example">--%>
+<%--    <ul class="pagination">--%>
+<%--        <li class="page-item">--%>
+<%--            <a class="page-link" href="/san-pham/index?page=${data.number - 1}">Previous</a>--%>
+<%--        </li>--%>
+<%--        <c:forEach begin="1" end="${ data.totalPages }" var="page">--%>
+<%--            <c:if test="${ page == 1 || page == data.totalPages || ( page >= data.number - 1 && page <= data.number + 1 ) }">--%>
+<%--                <li class="page-item">--%>
+<%--                    <a class="page-link"--%>
+<%--                       href="/san-pham/index?page=${page}">--%>
+<%--                            ${ page }--%>
+<%--                    </a>--%>
+<%--                </li>--%>
+<%--            </c:if>--%>
+<%--        </c:forEach>--%>
+<%--        <li class="page-item"><a class="page-link" href="/san-pham/index?page=${data.number + 1}">Next</a></li>--%>
+<%--    </ul>--%>
+<%--</nav>--%>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
 
