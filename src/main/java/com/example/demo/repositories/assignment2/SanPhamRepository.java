@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface SanPhamRepository
     extends JpaRepository<SanPham, Integer> {
-    @Query("SELECT sp FROM SanPham sp WHERE sp.ten LIKE :keyword")
-    public List<SanPham> findByTenLike(@Param("keyword") String keyword);
+//    @Query("SELECT sp FROM SanPham sp WHERE sp.ten LIKE :keyword")
+    public List<SanPham> findByTenLike(String keyword);
+
+    public List<SanPham> findByTrangThai(int trangThai);
 }
