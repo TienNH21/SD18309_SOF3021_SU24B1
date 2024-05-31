@@ -23,8 +23,15 @@ public class SPCT {
     @Column(name="IdKichThuoc")
     private Integer idKT;
 
-    @Column(name="IdSanPham")
-    private Integer idSP;
+//    @Column(name="IdSanPham")
+//    private Integer idSP;
+
+    @ManyToOne()
+    @JoinColumn(
+        name="IdSanPham",
+        referencedColumnName = "ID"
+    )
+    private SanPham sp;
 
     @Column(name="MaSPCT")
     private String maSPCT;
